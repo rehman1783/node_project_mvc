@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>eShop - Home</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .header {
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .header nav a {
+      margin: 0 15px;
+      color: #333;
+      font-weight: 500;
+    }
+    .header .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+    }
+
+    .hero {
+      background: url('https://source.unsplash.com/1200x400/?shopping,store') no-repeat center center/cover;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .shop-now-btn {
+      background: #ff6b6b;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .shop-now-btn:hover {
+      background: #ff4c4c;
+    }
+
+    .categories {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .categories h2 {
+      margin-bottom: 30px;
+    }
+    .category-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .category {
+      width: 180px;
+      text-align: center;
+    }
+    .category img {
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    .products {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .products h2 {
+      margin-bottom: 30px;
+    }
+    .product-grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      width: 220px;
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product-card h3 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    .product-card p {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #343a40;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">🛍️ eShop</div>
+    <nav>
+      <a href="">Home</a>
+      <a href="list">Products</a>
+      <a href="about">About</a>
+      <a href="contact">Contact</a>
+      <a href="#" class="btn">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Discover the Best Deals Online</h1>
+    <p>Shop from thousands of products at unbeatable prices</p>
+    <a href="#" class="shop-now-btn">Shop Now</a>
+  </section>
+
+  <section class="categories">
+    <h2>Featured Categories</h2>
+    <div class="category-list">
+      <div class="category">
+        <img src="https://source.unsplash.com/200x150/?laptop" alt="Electronics" />
+        <p>Electronics</p>
+      </div>
+      <div class="category">
+        <img src="https://source.unsplash.com/200x150/?tshirt" alt="Clothing" />
+        <p>Clothing</p>
+      </div>
+      <div class="category">
+        <img src="https://source.unsplash.com/200x150/?book" alt="Books" />
+        <p>Books</p>
+      </div>
+      <div class="category">
+        <img src="https://source.unsplash.com/200x150/?shoes" alt="Footwear" />
+        <p>Footwear</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Trending Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://source.unsplash.com/300x200/?smartphone" alt="Product">
+        <h3>Smartphone</h3>
+        <p>$499</p>
+      </div>
+      <div class="product-card">
+        <img src="https://source.unsplash.com/300x200/?watch" alt="Product">
+        <h3>Smart Watch</h3>
+        <p>$199</p>
+      </div>
+      <div class="product-card">
+        <img src="https://source.unsplash.com/300x200/?headphones" alt="Product">
+        <h3>Headphones</h3>
+        <p>$99</p>
+      </div>
+      <div class="product-card">
+        <img src="https://source.unsplash.com/300x200/?bag" alt="Product">
+        <h3>Travel Bag</h3>
+        <p>$69</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 eShop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

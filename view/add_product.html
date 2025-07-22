@@ -4,80 +4,83 @@
     <title>Add Products</title>
     <link rel="stylesheet" href="style.css">
     <style>
-       body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
 
-.container {
-    max-width: 800px;
-    margin: 40px  auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
 
-.form-group {
-    margin-bottom: 20px;
-    width: 100%;
-}
+        .form-group {
+            margin-bottom: 20px;
+            width: 100%;
+        }
 
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
 
-.form-group input, .form-group select, .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-#images {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-}
+        #images {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            display: none;
+        }
 
-#add-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
+        #add-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
 
-#add-btn:hover {
-    background-color: #3e8e41;
-}
+        #add-btn:hover {
+            background-color: #3e8e41;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Add Products</h1>
 
-        <div class="form-container">
-            
+        <!-- ✅ Form starts here -->
+        <form class="form-container" action="/add" method="POST">
             <div class="form-group">
                 <label for="categorySelect">Select Category:</label>
-                <select id="categorySelect">
+                <select id="categorySelect" name="category" required>
                     <option value="">All Categories</option>
                     <option value="electronics">Electronics</option>
                     <option value="clothing">Clothing</option>
@@ -86,24 +89,45 @@
             </div>
             <div class="form-group">
                 <label for="p-name">Product Name:</label>
-                <input type="text" id="p-name" placeholder="Product Name">
+                <input type="text" id="p-name" name="name" placeholder="Product Name" required>
             </div>
             <div class="form-group">
                 <label for="p-price">Product Price:</label>
-                <input type="number" id="p-price" placeholder="Product Price">
+                <input type="number" id="p-price" name="price" placeholder="Product Price" required>
             </div>
             <div class="form-group">
                 <label for="p-desc">Product Description:</label>
-                <textarea id="p-desc" placeholder="Product Description"></textarea>
+                <textarea id="p-desc" name="description" placeholder="Product Description" required></textarea>
             </div>
             <div class="form-group">
-                <label for="image-input">Add Image:</label>
-                <input type="file" id="image-input" accept="image/*">
-                <img src="" id="images" style="display: none;">
+                <label for="image-input">Add Image (optional):</label>
+                <input type="text" id="image-input" name="image" placeholder="Paste image URL here">
+                <img src="" id="images">
             </div>
-            <button id="add-btn">Add Product</button>
-        </div>
+            <button id="add-btn" type="submit">Add Product</button>
+            
+<!-- ✅ New text link to Product List -->
+<p style="text-align: center; margin-top: 20px; font-size: 16px;">
+    <a href="/list" style="color: #007bff; text-decoration: underline;">view products list</a>
+</p>
+        </form>
+        <!-- ✅ Form ends here -->
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        const imageInput = document.getElementById("image-input");
+        const imagePreview = document.getElementById("images");
+
+        imageInput.addEventListener("input", () => {
+            const url = imageInput.value.trim();
+            if (url) {
+                imagePreview.src = url;
+                imagePreview.style.display = "block";
+            } else {
+                imagePreview.style.display = "none";
+                imagePreview.src = "";
+            }
+        });
+    </script>
 </body>
 </html>

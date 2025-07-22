@@ -1,0 +1,23 @@
+[
+  {
+    "image": "",
+    "category": "electronics",
+    "name": "mobile",
+    "price": "500",
+    "description": "mobile"
+  },
+  {
+    "image": "",
+    "category": "clothing",
+    "name": "t shirt",
+    "price": "50",
+    "description": "nice to use"
+  },
+  {
+    "image": "",
+    "category": "books",
+    "name": "ishq--e-jaan",
+    "price": "30",
+    "description": "good"
+  }
+]
