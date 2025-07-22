@@ -19,24 +19,35 @@
       text-decoration: none;
       color: inherit;
     }
-    .header {
-      background: #fff;
-      padding: 20px 40px;
+
+    /* Navbar */
+    .navbar {
+      background-color: #3c56d4;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      color: white;
     }
-    .header .logo {
+    .navbar .logo {
       font-size: 24px;
       font-weight: bold;
+      color: #ffffff;
     }
-    .header nav a {
+    .navbar nav a {
       margin: 0 15px;
-      color: #333;
       font-weight: 500;
+      color: #ffffff;
+      transition: color 0.3s ease;
     }
-    .header .btn {
+    .navbar nav a:hover {
+      color: #007bff;
+    }
+    .navbar .btn {
       background-color: #007bff;
       color: white;
       padding: 8px 16px;
@@ -134,13 +145,15 @@
   </style>
 </head>
 <body>
-  <header class="header">
+
+  <!-- ✅ Navigation Bar -->
+  <header class="navbar">
     <div class="logo">🛍️ eShop</div>
     <nav>
-      <a href="">Home</a>
-      <a href="list">Products</a>
-      <a href="about">About</a>
-      <a href="contact">Contact</a>
+      <a href="/">Home</a>
+      <a href="/list">Products</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
       <a href="#" class="btn">Login</a>
     </nav>
   </header>
@@ -202,5 +215,6 @@
   <footer class="footer">
     <p>&copy; 2025 eShop. All rights reserved.</p>
   </footer>
+
 </body>
 </html>

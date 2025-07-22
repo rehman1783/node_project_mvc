@@ -5,11 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product List</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #f8f9fa, #e9efff);
-      color: #333;
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .header {
+      background: #3c56d4;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .header nav a {
+      margin: 0 15px;
+      color: #fff;
+      font-weight: 500;
+    }
+    .header nav a:hover {
+      color: #007bff;
+    }
+
+    .header .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
     }
 
     .container {
@@ -117,6 +157,19 @@
 </head>
 <body>
 
+  <!-- Shared Navbar -->
+  <header class="header">
+    <div class="logo">🛍️ eShop</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/list">Products</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="#" class="btn">Login</a>
+    </nav>
+  </header>
+
+  <!-- Product List Section -->
   <div class="container" id="product-list">
     <h2>🛍️ All Products</h2>
   </div>
